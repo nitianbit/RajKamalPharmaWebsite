@@ -275,45 +275,7 @@ footer{background:#030c18;border-top:1px solid rgba(255,255,255,0.06);padding:4.
   </div>
   <div class="footer-bottom"><p>© 2025 Raj Kamal Wing Pharma. All rights reserved.</p><p>Trusted Partner in Global Pharma Trade</p></div>
 </footer>
-
-<script>
-const cur=document.getElementById('cur'),curR=document.getElementById('curR');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-setInterval(()=>{rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px'},16);
-document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='0.5'});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'})});
-window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-
-function submitForm(){
-  const req=['f-first','f-last','f-email','f-msg'];
-  const bad=req.filter(id=>!document.getElementById(id).value.trim());
-  if(bad.length){
-    bad.forEach(id=>{
-      const el=document.getElementById(id);
-      el.style.borderColor='rgba(239,68,68,0.7)';
-      el.style.background='rgba(239,68,68,0.05)';
-      setTimeout(()=>{el.style.borderColor='';el.style.background=''},2500);
-    });
-    return;
-  }
-  document.getElementById('formBody').style.display='none';
-  const s=document.getElementById('formSuccess');
-  s.style.display='flex';
-  s.style.animation='fadeUp 0.5s ease both';
-}
-
-function resetForm(){
-  ['f-first','f-last','f-email','f-phone','f-org','f-country','f-msg'].forEach(id=>{document.getElementById(id).value=''});
-  document.getElementById('f-type').selectedIndex=0;
-  document.getElementById('formSuccess').style.display='none';
-  document.getElementById('formBody').style.display='block';
-}
-
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.style.animation='fadeUp 0.6s ease both';el.target.style.opacity='1'}})},{threshold:0.1});
-document.querySelectorAll('.info-card,.wp-card').forEach(el=>{el.style.opacity='0';obs.observe(el)});
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-</script>
+<script src="script.js"></script>
 <style>@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}</style>
 </body>
 </html>

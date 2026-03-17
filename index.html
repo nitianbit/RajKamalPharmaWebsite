@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Kamal Wing Pharma — Trusted Partner in Global Pharma Trade</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #05101f;
+  --deep:   #081528;
+  --navy:   #0c2044;
+  --blue:   #1044a3;
+  --sky:    #2563eb;
+  --teal:   #06b6d4;
+  --gold:   #d4a843;
+  --gold2:  #f0c96e;
+  --white:  #f0f4ff;
+  --mist:   #c8d4f0;
+  --dim:    rgba(192,210,240,0.55);
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+  --radius: 14px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none}
+
+/* CUSTOM CURSOR */
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.2s,height 0.2s,opacity 0.2s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(212,168,67,0.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out,width 0.3s,height 0.3s}
+
+/* NOISE */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:0.4}
+
+/* ═══════════ NAV ═══════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,16,31,0.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,168,67,0.12);transition:var(--transition)}
+nav.scrolled{height:62px;background:rgba(5,16,31,0.96);border-bottom-color:rgba(212,168,67,0.22)}
+
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),#8a6010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-1px;box-shadow:0 4px 20px rgba(212,168,67,0.35);flex-shrink:0}
+.logo-words{display:flex;flex-direction:column;line-height:1.1}
+.logo-words strong{font-size:14.5px;font-weight:600;color:var(--white);letter-spacing:0.2px}
+.logo-words span{font-size:10px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{display:block;padding:8px 16px;font-size:13.5px;font-weight:500;color:rgba(240,244,255,0.65);text-decoration:none;border-radius:8px;transition:var(--transition);letter-spacing:0.2px}
+.nav-menu a:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nav-menu a.active{color:var(--white)}
+.nav-cta a{background:linear-gradient(135deg,var(--gold),#9a6f10)!important;color:var(--ink)!important;font-weight:700!important;box-shadow:0 3px 16px rgba(212,168,67,0.3)}
+.nav-cta a:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(212,168,67,0.45)!important}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:0.3s}
+.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(5,16,31,0.98);padding:1rem 2rem 1.5rem;border-bottom:1px solid rgba(212,168,67,0.15);z-index:999;flex-direction:column;gap:4px}
+.mobile-menu a{display:block;padding:10px 14px;font-size:14px;color:rgba(240,244,255,0.75);text-decoration:none;border-radius:8px;transition:0.2s}
+.mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--white)}
+.mobile-menu.open{display:flex}
+
+/* ═══════════ SHARED SECTION STYLES ═══════════ */
+section{padding:7rem 5vw;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+h2.section-h{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;color:var(--white);margin-bottom:1rem}
+.section-lead{font-size:1.05rem;color:var(--dim);line-height:1.8;max-width:540px;font-weight:300}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 34px;background:linear-gradient(135deg,var(--gold),#9a6f10);color:var(--ink);font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;letter-spacing:0.3px;transition:var(--transition);box-shadow:0 4px 24px rgba(212,168,67,0.3)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(212,168,67,0.45)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 34px;background:transparent;color:var(--white);font-weight:500;font-size:14px;border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;cursor:pointer;text-decoration:none;transition:var(--transition)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,67,0.07)}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.2),transparent);margin:0}
+
+/* CARD BASE */
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);transition:var(--transition)}
+.card:hover{border-color:rgba(212,168,67,0.25);background:rgba(255,255,255,0.06)}
+
+/* ═══════════ HERO ═══════════ */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding-top:76px;overflow:hidden;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 65% 40%,rgba(16,68,163,0.45) 0%,transparent 65%),radial-gradient(ellipse 50% 60% at 10% 70%,rgba(6,182,212,0.12) 0%,transparent 55%),linear-gradient(155deg,var(--ink) 0%,#081528 55%,#061020 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,67,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,0.05) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 0%,transparent 75%)}
+
+.hero-left{position:relative;z-index:2;padding-left:max(5vw,2rem)}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.28);border-radius:100px;font-size:11px;font-weight:600;color:var(--gold2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp 0.7s ease both}
+.hero-pill .pip{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+h1.hero-title{font-size:clamp(3rem,6.5vw,5.2rem);font-weight:400;line-height:1.06;letter-spacing:-1.5px;margin-bottom:1.6rem;animation:fadeUp 0.7s ease 0.1s both}
+h1.hero-title .gold-italic{color:var(--gold);font-style:italic;font-weight:600}
+h1.hero-title .teal-word{color:var(--teal)}
+
+.hero-desc{font-size:1.05rem;color:var(--dim);line-height:1.8;max-width:500px;font-weight:300;margin-bottom:2.5rem;animation:fadeUp 0.7s ease 0.2s both}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s ease 0.3s both}
+.hero-trust{display:flex;align-items:center;gap:1.5rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.07);animation:fadeUp 0.7s ease 0.4s both}
+.trust-item{text-align:center}
+.trust-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:600;color:var(--gold);line-height:1}
+.trust-label{font-size:10px;color:rgba(192,210,240,0.5);letter-spacing:1.2px;text-transform:uppercase;margin-top:3px}
+.trust-sep{width:1px;height:36px;background:rgba(255,255,255,0.1)}
+
+.hero-right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;min-height:500px}
+.hero-visual-wrap{position:relative;width:420px;height:420px}
+.ring{position:absolute;border-radius:50%;border:1px solid;top:50%;left:50%;transform:translate(-50%,-50%)}
+.ring-1{width:380px;height:380px;border-color:rgba(212,168,67,0.15);animation:spin-slow 30s linear infinite}
+.ring-2{width:280px;height:280px;border-color:rgba(6,182,212,0.2);animation:spin-slow 20s linear infinite reverse}
+.ring-3{width:180px;height:180px;border-color:rgba(212,168,67,0.25);animation:spin-slow 15s linear infinite}
+.hero-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(16,68,163,0.9) 0%,rgba(6,182,212,0.4) 60%,transparent 100%);box-shadow:0 0 60px rgba(6,182,212,0.3),0 0 120px rgba(16,68,163,0.2);animation:pulse-orb 4s ease-in-out infinite}
+@keyframes pulse-orb{0%,100%{box-shadow:0 0 60px rgba(6,182,212,0.3),0 0 120px rgba(16,68,163,0.2)}50%{box-shadow:0 0 90px rgba(6,182,212,0.5),0 0 160px rgba(16,68,163,0.35)}}
+@keyframes spin-slow{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+.orbit-dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--gold);top:50%;left:50%;box-shadow:0 0 12px var(--gold)}
+.orbit-dot:nth-child(1){animation:orbit1 8s linear infinite}
+.orbit-dot:nth-child(2){background:var(--teal);box-shadow:0 0 12px var(--teal);animation:orbit2 12s linear infinite}
+.orbit-dot:nth-child(3){background:var(--gold2);box-shadow:0 0 8px var(--gold2);animation:orbit3 6s linear infinite}
+@keyframes orbit1{from{transform:translate(-50%,-50%) rotate(0deg) translateX(190px)}to{transform:translate(-50%,-50%) rotate(360deg) translateX(190px)}}
+@keyframes orbit2{from{transform:translate(-50%,-50%) rotate(120deg) translateX(140px)}to{transform:translate(-50%,-50%) rotate(480deg) translateX(140px)}}
+@keyframes orbit3{from{transform:translate(-50%,-50%) rotate(240deg) translateX(90px)}to{transform:translate(-50%,-50%) rotate(600deg) translateX(90px)}}
+
+.float-badge{position:absolute;background:rgba(8,21,40,0.95);border:1px solid rgba(212,168,67,0.3);border-radius:12px;padding:12px 18px;backdrop-filter:blur(16px);white-space:nowrap}
+.float-badge.one{top:40px;right:-20px;animation:float-a 5s ease-in-out infinite}
+.float-badge.two{bottom:60px;left:-30px;animation:float-b 6s ease-in-out infinite}
+.float-badge .fb-tag{font-size:9px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.float-badge .fb-val{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--white);margin-top:2px}
+@keyframes float-a{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes float-b{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════ MARQUEE ═══════════ */
+.marquee-wrap{overflow:hidden;border-top:1px solid rgba(212,168,67,0.12);border-bottom:1px solid rgba(212,168,67,0.12);background:rgba(255,255,255,0.02);padding:1.1rem 0}
+.marquee-track{display:flex;gap:3rem;align-items:center;animation:marquee 30s linear infinite;width:max-content}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.mq-item{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(192,210,240,0.35);flex-shrink:0}
+.mq-sep{color:var(--gold);font-size:10px;opacity:0.6}
+
+/* ═══════════ WHY US (HOME) ═══════════ */
+.why-section{background:linear-gradient(180deg,var(--ink) 0%,#081528 100%)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.feature-list{display:flex;flex-direction:column;gap:1.2rem}
+.feat-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 1.6rem;border-radius:12px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);cursor:default}
+.feat-item:hover{border-color:rgba(212,168,67,0.3);background:rgba(16,68,163,0.15);transform:translateX(6px)}
+.feat-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(212,168,67,0.18),rgba(6,182,212,0.18));display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.feat-item h4{font-size:14.5px;font-weight:600;margin-bottom:4px;color:var(--white)}
+.feat-item p{font-size:13px;color:var(--dim);line-height:1.65}
+
+.why-visual{position:relative}
+.why-img-box{width:100%;aspect-ratio:4/5;border-radius:20px;overflow:hidden;position:relative;border:1px solid rgba(212,168,67,0.15)}
+.why-img-bg{width:100%;height:100%;background:linear-gradient(135deg,rgba(16,68,163,0.6),rgba(6,182,212,0.3),rgba(5,16,31,0.8));display:flex;align-items:center;justify-content:center}
+.why-inner-art{text-align:center}
+.why-inner-art svg{width:200px;opacity:0.85}
+.stat-card{position:absolute;background:rgba(5,16,31,0.92);border:1px solid rgba(212,168,67,0.3);border-radius:12px;padding:14px 20px;backdrop-filter:blur(20px)}
+.stat-card.top-r{top:-20px;right:-20px}
+.stat-card.bot-l{bottom:-20px;left:-20px}
+.sc-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:var(--gold);line-height:1}
+.sc-l{font-size:11px;color:var(--dim);margin-top:3px;letter-spacing:0.5px}
+
+/* ═══════════ PARTNERS (HOME) ═══════════ */
+.partners-sec{background:linear-gradient(135deg,#081528,var(--ink))}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:3rem}
+.partner-card{padding:1.4rem 1.8rem;border-radius:12px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);cursor:default}
+.partner-card:hover{border-color:rgba(6,182,212,0.35);background:rgba(6,182,212,0.07);transform:translateY(-3px)}
+.pc-type{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.pc-name{font-size:14px;font-weight:500;color:var(--white);line-height:1.4}
+
+/* ═══════════ CTA BAND (HOME) ═══════════ */
+.cta-band{background:linear-gradient(135deg,var(--navy),#0a1e4a);border-top:1px solid rgba(212,168,67,0.15);border-bottom:1px solid rgba(212,168,67,0.15);text-align:center;padding:5rem 5vw}
+.cta-band h2{font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:1rem}
+.cta-band p{color:var(--dim);margin-bottom:2.5rem;font-size:1.05rem;font-weight:300}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ═══════════ FOOTER ═══════════ */
+footer{background:#030c18;border-top:1px solid rgba(255,255,255,0.06);padding:4.5rem 5vw 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-about p{font-size:13.5px;color:rgba(192,210,240,0.45);line-height:1.75;margin:1rem 0 1.5rem;max-width:280px}
+.footer-col h6{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li a{font-size:13.5px;color:rgba(192,210,240,0.45);text-decoration:none;transition:0.2s;display:inline-block}
+.footer-col ul li a:hover{color:var(--white);transform:translateX(4px)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:12px;color:rgba(192,210,240,0.3)}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-menu{display:none}
+  .hamburger{display:flex}
+  .hero{grid-template-columns:1fr;padding:100px 5vw 4rem;min-height:auto}
+  .hero-right{display:none}
+  .hero-trust{flex-wrap:wrap;gap:1rem}
+  .why-grid{grid-template-columns:1fr;gap:2.5rem}
+  .why-visual{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  section{padding:4.5rem 5vw}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  h1.hero-title{letter-spacing:-0.5px}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="logo" href="index.html">
+    <div class="logo-badge">RK</div>
+    <div class="logo-words">
+      <strong>Raj Kamal Wing Pharma</strong>
+      <span>Global Pharma Trade</span>
+    </div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Products</a></li>
+    <li class="nav-cta"><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Products &amp; Services</a>
+  <a href="contact.html" style="color:var(--gold);font-weight:600">Contact Us</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-left">
+    <div class="hero-pill"><span class="pip"></span>India-Based · Global Pharma Trade</div>
+    <h1 class="hero-title">
+      Trusted Partner<br>in <span class="gold-italic">Global</span><br>
+      <span class="teal-word">Pharma</span> Trade
+    </h1>
+    <p class="hero-desc">Specializing in the import, export, and marketing of high-quality branded and generic medicines — bridging manufacturers to global healthcare markets with integrity.</p>
+    <div class="hero-btns">
+      <a href="services.html" class="btn-gold">Explore Products &nbsp;→</a>
+      <a href="contact.html" class="btn-ghost">Partner With Us</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-num">7+</div>
+        <div class="trust-label">Partner Hospitals</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-num">3</div>
+        <div class="trust-label">Pharma Partners</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-num">6</div>
+        <div class="trust-label">Therapy Segments</div>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <div class="trust-num">WHO</div>
+        <div class="trust-label">GMP Sourcing</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual-wrap">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <div class="hero-orb"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="float-badge one">
+        <div class="fb-tag">Certified Supply</div>
+        <div class="fb-val">WHO-GMP</div>
+      </div>
+      <div class="float-badge two">
+        <div class="fb-tag">Expanding To</div>
+        <div class="fb-val">Africa &amp; SEA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mq-item">Branded Medicines</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Generic Pharmaceuticals</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Injectable Medicines</span><span class="mq-sep">◆</span>
+    <span class="mq-item">WHO-GMP Certified</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Antibiotics</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Global Distribution</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Pharma Import Export</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Quality Assurance</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Branded Medicines</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Generic Pharmaceuticals</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Injectable Medicines</span><span class="mq-sep">◆</span>
+    <span class="mq-item">WHO-GMP Certified</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Antibiotics</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Global Distribution</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Pharma Import Export</span><span class="mq-sep">◆</span>
+    <span class="mq-item">Quality Assurance</span><span class="mq-sep">◆</span>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="eyebrow">Why Choose Us</div>
+  <h2 class="section-h">Built on Trust,<br>Driven by Quality</h2>
+  <p class="section-lead">We deliver pharmaceutical excellence through verified sourcing, strict compliance, and dependable global logistics.</p>
+
+  <div class="why-grid">
+    <div class="feature-list">
+      <div class="feat-item">
+        <div class="feat-icon">🏭</div>
+        <div>
+          <h4>WHO-GMP Certified Sourcing</h4>
+          <p>All medicines sourced exclusively from WHO-GMP certified manufacturers ensuring world-class quality.</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🌍</div>
+        <div>
+          <h4>Global Distribution Network</h4>
+          <p>Strong logistics partnerships enabling smooth, timely delivery across Asia, Africa, and beyond.</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">📋</div>
+        <div>
+          <h4>Full Regulatory Compliance</h4>
+          <p>Meticulous documentation and compliance with international pharmaceutical regulatory standards.</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🤝</div>
+        <div>
+          <h4>Long-Term Partnerships</h4>
+          <p>Committed to enduring relationships with manufacturers, distributors, and healthcare organizations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-img-box">
+        <div class="why-img-bg">
+          <div class="why-inner-art">
+            <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="90" stroke="rgba(212,168,67,0.2)" stroke-width="1"/>
+              <circle cx="100" cy="100" r="65" stroke="rgba(6,182,212,0.25)" stroke-width="1.5"/>
+              <circle cx="100" cy="100" r="38" fill="rgba(16,68,163,0.5)" stroke="rgba(212,168,67,0.4)" stroke-width="1.5"/>
+              <text x="100" y="107" text-anchor="middle" fill="rgba(212,168,67,0.9)" font-size="22" font-family="serif" font-weight="600">RK</text>
+              <circle cx="165" cy="100" r="8" fill="rgba(212,168,67,0.8)"/>
+              <circle cx="35" cy="100" r="6" fill="rgba(6,182,212,0.8)"/>
+              <circle cx="100" cy="35" r="6" fill="rgba(212,168,67,0.6)"/>
+              <circle cx="100" cy="165" r="5" fill="rgba(6,182,212,0.6)"/>
+              <line x1="100" y1="100" x2="165" y2="100" stroke="rgba(212,168,67,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="100" y1="100" x2="35" y2="100" stroke="rgba(6,182,212,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="100" y1="100" x2="100" y2="35" stroke="rgba(212,168,67,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="100" y1="100" x2="100" y2="165" stroke="rgba(6,182,212,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="100" y="210" text-anchor="middle" fill="rgba(192,210,240,0.4)" font-size="9" font-family="sans-serif" letter-spacing="3">GLOBAL NETWORK</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card top-r">
+        <div class="sc-n">Philippines</div>
+        <div class="sc-l">Current Market</div>
+      </div>
+      <div class="stat-card bot-l">
+        <div class="sc-n">Africa + SEA</div>
+        <div class="sc-l">Expanding To</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PARTNERS -->
+<section class="partners-sec">
+  <div class="eyebrow">Our Network</div>
+  <h2 class="section-h">Trusted by Healthcare<br>Institutions</h2>
+  <div class="partners-grid">
+    <div class="partner-card"><div class="pc-type">Hospital · Philippines</div><div class="pc-name">St Luke's Hospital (BGC), Manila</div></div>
+    <div class="partner-card"><div class="pc-type">Institution · Philippines</div><div class="pc-name">University of Philippines (Dagupan)</div></div>
+    <div class="partner-card"><div class="pc-type">Hospital · Philippines</div><div class="pc-name">Region 1 Medical Center (Luzon)</div></div>
+    <div class="partner-card"><div class="pc-type">Hospital · Philippines</div><div class="pc-name">Bicol Regional Hospital, Bicol</div></div>
+    <div class="partner-card"><div class="pc-type">Company · Philippines</div><div class="pc-name">Start Pharmaceutical, Manila</div></div>
+    <div class="partner-card"><div class="pc-type">Company · Philippines</div><div class="pc-name">Red Wings Pharma, Manila</div></div>
+    <div class="partner-card"><div class="pc-type">Company · Philippines</div><div class="pc-name">Sagar Pharma Inc., Manila</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="eyebrow" style="justify-content:center;display:flex">Start a Conversation</div>
+  <h2>Ready to partner with a global<br><em style="color:var(--gold)">pharma supplier</em> you can trust?</h2>
+  <p>We're looking for distributors, hospitals, and pharma companies for long-term pharmaceutical trade partnerships.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-gold">Contact Us →</a>
+    <a href="services.html" class="btn-ghost">View Our Products</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html">
+        <div class="logo-badge">RK</div>
+        <div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div>
+      </a>
+      <p>Trusted partner in global pharmaceutical trade — supplying quality branded and generic medicines to international markets with reliability and compliance.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Navigate</h6>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>Products</h6>
+      <ul>
+        <li><a href="services.html">Branded Medicines</a></li>
+        <li><a href="services.html">Generic Medicines</a></li>
+        <li><a href="services.html">Injectables</a></li>
+        <li><a href="services.html">Oral Formulations</a></li>
+        <li><a href="services.html">Topicals</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h6>Contact</h6>
+      <ul>
+        <li><a href="tel:+919211230102">+91 9211230102</a></li>
+        <li><a href="tel:+919560020800">+91 95600 20800</a></li>
+        <li><a href="mailto:rajkamalpharmaceuticals@gmail.com">Email Us</a></li>
+        <li><a href="https://www.rajkamalwingpharma.com" target="_blank">Website</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Raj Kamal Wing Pharma. All rights reserved.</p>
+    <p>Trusted Partner in Global Pharma Trade</p>
+  </div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+setInterval(()=>{rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px'},16);
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='0.5'});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'});
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// Intersection observer for scroll reveals
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeUp 0.6s ease both';e.target.style.opacity='1'}});
+},{threshold:0.1});
+document.querySelectorAll('.feat-item,.partner-card,.stat-card').forEach(el=>{el.style.opacity='0';observer.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products &amp; Services — Raj Kamal Wing Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#05101f;--deep:#081528;--navy:#0c2044;--blue:#1044a3;--sky:#2563eb;--teal:#06b6d4;--gold:#d4a843;--gold2:#f0c96e;--white:#f0f4ff;--mist:#c8d4f0;--dim:rgba(192,210,240,0.55);--card-bg:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);--radius:14px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(212,168,67,0.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:0.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,16,31,0.8);backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,168,67,0.12);transition:var(--transition)}
+nav.scrolled{height:62px;background:rgba(5,16,31,0.96);border-bottom-color:rgba(212,168,67,0.22)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),#8a6010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-1px;box-shadow:0 4px 20px rgba(212,168,67,0.35);flex-shrink:0}
+.logo-words{display:flex;flex-direction:column;line-height:1.1}
+.logo-words strong{font-size:14.5px;font-weight:600;color:var(--white)}
+.logo-words span{font-size:10px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{display:block;padding:8px 16px;font-size:13.5px;font-weight:500;color:rgba(240,244,255,0.65);text-decoration:none;border-radius:8px;transition:var(--transition)}
+.nav-menu a:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nav-menu a.active{color:var(--white)}
+.nav-cta a{background:linear-gradient(135deg,var(--gold),#9a6f10)!important;color:var(--ink)!important;font-weight:700!important;box-shadow:0 3px 16px rgba(212,168,67,0.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(5,16,31,0.98);padding:1rem 2rem 1.5rem;border-bottom:1px solid rgba(212,168,67,0.15);z-index:999;flex-direction:column;gap:4px}
+.mobile-menu a{display:block;padding:10px 14px;font-size:14px;color:rgba(240,244,255,0.75);text-decoration:none;border-radius:8px}
+.mobile-menu.open{display:flex}
+section{padding:7rem 5vw;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+h2.sh{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;color:var(--white);margin-bottom:1rem}
+.sl{font-size:1.05rem;color:var(--dim);line-height:1.8;max-width:560px;font-weight:300}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 34px;background:linear-gradient(135deg,var(--gold),#9a6f10);color:var(--ink);font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:var(--transition);box-shadow:0 4px 24px rgba(212,168,67,0.3)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(212,168,67,0.45)}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.2),transparent)}
+
+/* PAGE HERO */
+.page-hero{padding-top:140px;padding-bottom:5rem;background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(6,182,212,0.3) 0%,transparent 65%),linear-gradient(180deg,var(--ink) 0%,var(--deep) 100%);text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(6,182,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(6,182,212,0.04) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 80%)}
+.page-hero .eyebrow{justify-content:center}
+.page-hero h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:1.2rem}
+.page-hero h1 em{font-style:italic;color:var(--teal)}
+.page-hero p{font-size:1.1rem;color:var(--dim);max-width:580px;margin:0 auto;font-weight:300;line-height:1.8}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:2rem;font-size:12px;color:rgba(192,210,240,0.4)}
+.breadcrumb a{color:var(--teal);text-decoration:none}
+.breadcrumb span{opacity:0.4}
+
+/* PRODUCTS */
+.products-section{background:linear-gradient(180deg,var(--deep) 0%,var(--ink) 100%)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.prod-card{padding:2rem;border-radius:16px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);cursor:default;position:relative;overflow:hidden}
+.prod-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,68,163,0.2),rgba(6,182,212,0.08));opacity:0;transition:0.3s;border-radius:inherit}
+.prod-card:hover{border-color:rgba(6,182,212,0.4);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.35)}
+.prod-card:hover::after{opacity:1}
+.prod-em{font-size:2.4rem;margin-bottom:1rem;display:block;position:relative;z-index:1}
+.prod-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:500;color:var(--white);margin-bottom:0.7rem;position:relative;z-index:1}
+.prod-desc{font-size:13px;color:var(--dim);line-height:1.75;position:relative;z-index:1}
+.prod-tag{display:inline-block;margin-top:1rem;padding:4px 12px;background:rgba(6,182,212,0.12);border:1px solid rgba(6,182,212,0.25);border-radius:100px;font-size:10.5px;color:var(--teal);letter-spacing:1px;text-transform:uppercase;font-weight:600;position:relative;z-index:1}
+
+/* THERAPY */
+.therapy-section{background:var(--ink)}
+.therapy-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
+.therapy-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.tc{display:flex;align-items:center;gap:14px;padding:1.2rem 1.5rem;border-radius:12px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);cursor:default}
+.tc:hover{border-color:rgba(6,182,212,0.35);background:rgba(6,182,212,0.08);transform:scale(1.02)}
+.tc-dot{width:10px;height:10px;border-radius:50%;background:var(--teal);flex-shrink:0;box-shadow:0 0 8px var(--teal)}
+.tc-name{font-size:14px;font-weight:500;color:var(--white)}
+.therapy-right{padding:2.5rem;border-radius:20px;border:1px solid rgba(6,182,212,0.2);background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(16,68,163,0.15));text-align:center}
+.therapy-right h3{font-size:1.4rem;margin-bottom:0.8rem;color:var(--teal)}
+.therapy-right p{font-size:13.5px;color:var(--dim);line-height:1.75}
+.therapy-big{font-family:'Playfair Display',serif;font-size:4rem;font-weight:600;color:rgba(6,182,212,0.2);margin-bottom:0.5rem;display:block}
+
+/* QUALITY */
+.quality-section{background:linear-gradient(135deg,var(--navy),var(--deep))}
+.quality-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.quality-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.qc{padding:2rem 2.2rem;border-radius:14px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);position:relative}
+.qc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;border-radius:14px 0 0 14px;background:linear-gradient(180deg,var(--gold),var(--teal));opacity:0;transition:0.3s}
+.qc:hover{border-color:rgba(212,168,67,0.25);background:rgba(16,68,163,0.15);transform:translateX(6px)}
+.qc:hover::before{opacity:1}
+.qc h4{font-size:15px;font-weight:600;color:var(--gold2);margin-bottom:8px}
+.qc p{font-size:13.5px;color:var(--dim);line-height:1.75}
+
+/* DISTRIBUTION */
+.dist-section{background:var(--ink)}
+.dist-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;position:relative}
+.dist-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.3),var(--teal),rgba(212,168,67,0.3),transparent)}
+.ds{text-align:center;padding:0 1.5rem;position:relative}
+.ds-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--deep));border:1.5px solid rgba(212,168,67,0.4);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);font-weight:500;margin:0 auto 1.5rem}
+.ds h4{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--white)}
+.ds p{font-size:13px;color:var(--dim);line-height:1.65}
+
+/* CTA */
+.cta-band{background:linear-gradient(135deg,var(--navy),#0a1e4a);border-top:1px solid rgba(212,168,67,0.15);border-bottom:1px solid rgba(212,168,67,0.15);text-align:center;padding:5rem 5vw}
+.cta-band h2{font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:1rem}
+.cta-band p{color:var(--dim);margin-bottom:2.5rem;font-size:1.05rem;font-weight:300}
+
+/* FOOTER */
+footer{background:#030c18;border-top:1px solid rgba(255,255,255,0.06);padding:4.5rem 5vw 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-about p{font-size:13.5px;color:rgba(192,210,240,0.45);line-height:1.75;margin:1rem 0;max-width:280px}
+.footer-col h6{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li a{font-size:13.5px;color:rgba(192,210,240,0.45);text-decoration:none;transition:0.2s;display:inline-block}
+.footer-col ul li a:hover{color:var(--white);transform:translateX(4px)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:12px;color:rgba(192,210,240,0.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}.nav-menu{display:none}.hamburger{display:flex}
+  .products-grid{grid-template-columns:1fr 1fr}
+  .therapy-intro{grid-template-columns:1fr;gap:2rem}
+  .therapy-cards{grid-template-columns:1fr}
+  .quality-header{grid-template-columns:1fr}
+  .quality-grid{grid-template-columns:1fr}
+  .dist-steps{grid-template-columns:1fr 1fr}
+  .dist-steps::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  section{padding:4.5rem 5vw}
+}
+@media(max-width:600px){.products-grid{grid-template-columns:1fr}.dist-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+<nav id="navbar">
+  <a class="logo" href="index.html"><div class="logo-badge">RK</div><div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html" class="active">Products</a></li>
+    <li class="nav-cta"><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Products &amp; Services</a><a href="contact.html" style="color:var(--gold);font-weight:600">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Products &amp; Services</span></div>
+  <div class="eyebrow">What We Offer</div>
+  <h1>Products &amp; <em>Services</em></h1>
+  <p>A diverse portfolio of pharmaceutical products sourced from certified manufacturers, meeting international quality and regulatory standards worldwide.</p>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div class="eyebrow">Product Portfolio</div>
+  <h2 class="sh">Our Full Product Range</h2>
+  <p class="sl">All products are sourced from reliable and certified manufacturers, complying with international quality and regulatory standards to ensure safety, effectiveness, and consistency.</p>
+  <div class="products-grid">
+    <div class="prod-card">
+      <span class="prod-em">💊</span>
+      <div class="prod-name">Branded Pharmaceutical Medicines</div>
+      <p class="prod-desc">Premium branded medicines sourced from trusted manufacturers with full chain of custody documentation and authenticity guarantees for international markets.</p>
+      <span class="prod-tag">Branded</span>
+    </div>
+    <div class="prod-card">
+      <span class="prod-em">🧪</span>
+      <div class="prod-name">Generic Medicines</div>
+      <p class="prod-desc">High-quality, cost-effective generic alternatives meeting the same efficacy and safety standards as branded counterparts — our key growth focus.</p>
+      <span class="prod-tag">Generic</span>
+    </div>
+    <div class="prod-card">
+      <span class="prod-em">🔵</span>
+      <div class="prod-name">Tablets &amp; Capsules</div>
+      <p class="prod-desc">Wide range of oral solid dosage forms across therapeutic categories, precisely manufactured to international pharmacopeial standards.</p>
+      <span class="prod-tag">Oral Solid</span>
+    </div>
+    <div class="prod-card">
+      <span class="prod-em">🧴</span>
+      <div class="prod-name">Syrups &amp; Oral Liquids</div>
+      <p class="prod-desc">Liquid formulations including syrups, suspensions, and oral solutions for diverse patient populations including pediatric use cases.</p>
+      <span class="prod-tag">Oral Liquid</span>
+    </div>
+    <div class="prod-card">
+      <span class="prod-em">💉</span>
+      <div class="prod-name">Injectable Medicines</div>
+      <p class="prod-desc">Sterile injectable formulations with cold-chain compliant logistics and rigorous quality verification protocols at every step.</p>
+      <span class="prod-tag">Sterile</span>
+    </div>
+    <div class="prod-card">
+      <span class="prod-em">🏥</span>
+      <div class="prod-name">Ointments &amp; Topicals</div>
+      <p class="prod-desc">Topical pharmaceutical products including ointments, creams, and gels for dermatological and wound-care applications globally.</p>
+      <span class="prod-tag">Topical</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THERAPY AREAS -->
+<section class="therapy-section">
+  <div class="eyebrow">Therapy Areas</div>
+  <h2 class="sh">Key Therapeutic<br>Segments</h2>
+  <div class="therapy-intro">
+    <div class="therapy-cards">
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">Antibiotics</span></div>
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">Pain Management</span></div>
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">Anti-Allergic</span></div>
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">Gastrointestinal</span></div>
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">Multivitamins &amp; Supplements</span></div>
+      <div class="tc"><span class="tc-dot"></span><span class="tc-name">General Healthcare</span></div>
+    </div>
+    <div class="therapy-right">
+      <span class="therapy-big">6+</span>
+      <h3>Therapy Segments</h3>
+      <p>Raj Kamal Wing Pharma supplies pharmaceutical products across multiple therapeutic segments to support diverse healthcare needs globally. Our product range continuously expands with market demand.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUALITY -->
+<section class="quality-section">
+  <div class="quality-header">
+    <div>
+      <div class="eyebrow">Standards</div>
+      <h2 class="sh">Quality Assurance<br>at Every Step</h2>
+    </div>
+    <p class="sl">Quality is at the core of our operations. We source from WHO-GMP certified manufacturers and adhere to recognized international standards throughout the entire supply chain.</p>
+  </div>
+  <div class="quality-grid">
+    <div class="qc">
+      <h4>🏭 WHO-GMP Certified Sourcing</h4>
+      <p>We source medicines exclusively from trusted WHO-GMP certified manufacturers, ensuring pharmaceutical-grade quality at the point of production with full documentation.</p>
+    </div>
+    <div class="qc">
+      <h4>📋 International Standards Compliance</h4>
+      <p>All operations adhere to recognized international regulatory and pharmaceutical standards with complete, transparent documentation at every stage of the supply chain.</p>
+    </div>
+    <div class="qc">
+      <h4>📦 Secure Packaging &amp; Handling</h4>
+      <p>Careful product selection, secure packaging, and safe shipment handling to maintain product integrity throughout the entire supply and distribution chain.</p>
+    </div>
+    <div class="qc">
+      <h4>🔍 Continuous Monitoring</h4>
+      <p>Through careful monitoring and documentation at every step, we ensure every product supplied meets the required safety, quality, and compliance standards without exception.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DISTRIBUTION MODEL -->
+<section class="dist-section">
+  <div style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">How We Work</div>
+    <h2 class="sh" style="text-align:center">Supply &amp; Distribution Model</h2>
+    <p class="sl" style="margin:0 auto;text-align:center">We source medicines from trusted manufacturers and distribute them globally through reliable logistics and strong partner networks.</p>
+  </div>
+  <div class="dist-steps">
+    <div class="ds">
+      <div class="ds-num">01</div>
+      <h4>Manufacturer Selection</h4>
+      <p>Carefully vetted WHO-GMP certified manufacturers with proven track records in quality and compliance.</p>
+    </div>
+    <div class="ds">
+      <div class="ds-num">02</div>
+      <h4>Quality Verification</h4>
+      <p>Rigorous product quality checks, documentation review, and regulatory compliance verification before procurement.</p>
+    </div>
+    <div class="ds">
+      <div class="ds-num">03</div>
+      <h4>Secure Packaging</h4>
+      <p>Safe, compliant packaging and labeling to meet destination country import standards and preserve product integrity.</p>
+    </div>
+    <div class="ds">
+      <div class="ds-num">04</div>
+      <h4>Global Delivery</h4>
+      <p>Reliable logistics and trusted partner networks ensuring timely, compliant delivery to international clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="eyebrow" style="justify-content:center;display:flex">Get in Touch</div>
+  <h2>Looking to source quality<br><em style="color:var(--gold)">pharmaceutical products</em>?</h2>
+  <p>Contact us to discuss your requirements, get pricing, or explore a long-term supply partnership.</p>
+  <a href="contact.html" class="btn-gold">Enquire Now →</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html"><div class="logo-badge">RK</div><div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div></a>
+      <p>Trusted partner in global pharmaceutical trade — supplying quality branded and generic medicines to international markets.</p>
+    </div>
+    <div class="footer-col"><h6>Navigate</h6><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h6>Products</h6><ul><li><a href="services.html">Branded Medicines</a></li><li><a href="services.html">Generic Medicines</a></li><li><a href="services.html">Injectables</a></li><li><a href="services.html">Oral Formulations</a></li></ul></div>
+    <div class="footer-col"><h6>Contact</h6><ul><li><a href="tel:+919211230102">+91 9211230102</a></li><li><a href="tel:+919560020800">+91 95600 20800</a></li><li><a href="mailto:rajkamalpharmaceuticals@gmail.com">Email Us</a></li><li><a href="https://www.rajkamalwingpharma.com" target="_blank">Website</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Raj Kamal Wing Pharma. All rights reserved.</p><p>Trusted Partner in Global Pharma Trade</p></div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+setInterval(()=>{rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px'},16);
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='0.5'});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'})});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.style.animation='fadeUp 0.6s ease both';el.target.style.opacity='1'}})},{threshold:0.1});
+document.querySelectorAll('.prod-card,.qc,.tc,.ds').forEach(el=>{el.style.opacity='0';obs.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Raj Kamal Wing Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#05101f;--deep:#081528;--navy:#0c2044;--blue:#1044a3;--sky:#2563eb;--teal:#06b6d4;--gold:#d4a843;--gold2:#f0c96e;--white:#f0f4ff;--mist:#c8d4f0;--dim:rgba(192,210,240,0.55);--card-bg:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);--radius:14px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,width 0.2s,height 0.2s,opacity 0.2s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(212,168,67,0.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:0.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,16,31,0.8);backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,168,67,0.12);transition:var(--transition)}
+nav.scrolled{height:62px;background:rgba(5,16,31,0.96);border-bottom-color:rgba(212,168,67,0.22)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),#8a6010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-1px;box-shadow:0 4px 20px rgba(212,168,67,0.35);flex-shrink:0}
+.logo-words{display:flex;flex-direction:column;line-height:1.1}
+.logo-words strong{font-size:14.5px;font-weight:600;color:var(--white);letter-spacing:0.2px}
+.logo-words span{font-size:10px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{display:block;padding:8px 16px;font-size:13.5px;font-weight:500;color:rgba(240,244,255,0.65);text-decoration:none;border-radius:8px;transition:var(--transition)}
+.nav-menu a:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nav-menu a.active{color:var(--white)}
+.nav-cta a{background:linear-gradient(135deg,var(--gold),#9a6f10)!important;color:var(--ink)!important;font-weight:700!important;box-shadow:0 3px 16px rgba(212,168,67,0.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(5,16,31,0.98);padding:1rem 2rem 1.5rem;border-bottom:1px solid rgba(212,168,67,0.15);z-index:999;flex-direction:column;gap:4px}
+.mobile-menu a{display:block;padding:10px 14px;font-size:14px;color:rgba(240,244,255,0.75);text-decoration:none;border-radius:8px}
+.mobile-menu.open{display:flex}
+section{padding:7rem 5vw;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+h2.sh{font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;color:var(--white);margin-bottom:1rem}
+.sl{font-size:1.05rem;color:var(--dim);line-height:1.8;max-width:560px;font-weight:300}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 34px;background:linear-gradient(135deg,var(--gold),#9a6f10);color:var(--ink);font-weight:700;font-size:14px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;transition:var(--transition);box-shadow:0 4px 24px rgba(212,168,67,0.3)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(212,168,67,0.45)}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.2),transparent)}
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);transition:var(--transition)}
+.card:hover{border-color:rgba(212,168,67,0.25);background:rgba(255,255,255,0.06)}
+
+/* PAGE HERO */
+.page-hero{padding-top:140px;padding-bottom:5rem;background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(16,68,163,0.5) 0%,transparent 65%),linear-gradient(180deg,var(--ink) 0%,var(--deep) 100%);text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,67,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,0.04) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 80%)}
+.page-hero .eyebrow{justify-content:center}
+.page-hero h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:1.2rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero p{font-size:1.1rem;color:var(--dim);max-width:580px;margin:0 auto;font-weight:300;line-height:1.8}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:2rem;font-size:12px;color:rgba(192,210,240,0.4)}
+.breadcrumb a{color:var(--teal);text-decoration:none}
+.breadcrumb span{opacity:0.4}
+
+/* ABOUT INTRO */
+.about-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-intro-text h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;line-height:1.2;margin-bottom:1.2rem}
+.about-intro-text p{font-size:15px;color:var(--dim);line-height:1.85;margin-bottom:1rem;font-weight:300}
+.check-row{display:flex;flex-direction:column;gap:10px;margin-top:1.5rem}
+.check-row li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(192,210,240,0.8);list-style:none}
+.check-row li::before{content:'✓';color:var(--teal);font-weight:700;margin-top:1px;flex-shrink:0}
+.about-intro-visual{position:relative}
+.intro-box{border-radius:20px;overflow:hidden;border:1px solid rgba(212,168,67,0.15);background:linear-gradient(135deg,rgba(16,68,163,0.3),rgba(6,182,212,0.1),rgba(5,16,31,0.9));aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:2rem;text-align:center}
+.intro-box-icon{font-size:3rem;margin-bottom:0.5rem}
+.intro-box h3{font-size:1.5rem;font-weight:500;color:var(--gold)}
+.intro-box p{font-size:13px;color:var(--dim);line-height:1.7}
+.badge-overlap{position:absolute;background:rgba(5,16,31,0.93);border:1px solid rgba(212,168,67,0.3);border-radius:12px;padding:12px 18px;backdrop-filter:blur(16px)}
+.badge-overlap.top-l{top:-16px;left:-16px}
+.badge-overlap.bot-r{bottom:-16px;right:-16px}
+.bo-label{font-size:9.5px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.bo-val{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--white);margin-top:2px}
+
+/* MISSION VISION */
+.mv-section{background:linear-gradient(135deg,var(--deep),var(--ink))}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.mv-card{padding:2.5rem;border-radius:16px;border:1px solid var(--card-border);background:var(--card-bg);position:relative;overflow:hidden;transition:var(--transition)}
+.mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:0.3s}
+.mv-card.mission::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.mv-card.vision::before{background:linear-gradient(90deg,var(--teal),#38bdf8)}
+.mv-card:hover{border-color:rgba(212,168,67,0.2);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.mv-card .mv-icon{font-size:2rem;margin-bottom:1rem}
+.mv-card h3{font-size:1.5rem;font-weight:500;margin-bottom:0.8rem;color:var(--white)}
+.mv-card p{font-size:14px;color:var(--dim);line-height:1.8}
+.mv-card ul{margin-top:1rem;display:flex;flex-direction:column;gap:8px;list-style:none}
+.mv-card ul li{display:flex;gap:10px;font-size:13.5px;color:rgba(192,210,240,0.75)}
+.mv-card ul li::before{content:'→';color:var(--gold);flex-shrink:0}
+
+/* COMMITMENTS */
+.commit-section{background:var(--ink)}
+.commit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.commit-card{padding:2rem;border-radius:14px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);cursor:default}
+.commit-card:hover{border-color:rgba(212,168,67,0.3);background:rgba(16,68,163,0.18);transform:translateY(-4px)}
+.cc-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:0.8rem;opacity:0.7}
+.cc-title{font-size:15px;font-weight:600;margin-bottom:0.6rem;color:var(--white)}
+.cc-text{font-size:13px;color:var(--dim);line-height:1.7}
+
+/* DIRECTOR */
+.director-section{background:linear-gradient(135deg,var(--navy),var(--deep));position:relative;overflow:hidden}
+.director-section::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(16,68,163,0.2) 0%,transparent 70%)}
+.director-inner{display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:center;max-width:960px;margin:0 auto}
+.director-photo{width:200px;height:200px;border-radius:24px;background:linear-gradient(135deg,rgba(212,168,67,0.25),rgba(6,182,212,0.25));border:2px solid rgba(212,168,67,0.3);display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;position:relative}
+.director-initials{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:600;color:var(--gold);line-height:1}
+.director-photo-tag{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:100px;white-space:nowrap}
+.director-info{position:relative;z-index:1}
+.director-name{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:500;line-height:1.1;margin-bottom:6px}
+.director-role{font-size:11px;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:1.5rem}
+.director-bio{font-size:14.5px;color:var(--dim);line-height:1.85;font-weight:300}
+.director-traits{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.trait-pill{padding:6px 16px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.25);border-radius:100px;font-size:12px;color:var(--gold2);font-weight:500;letter-spacing:0.3px}
+
+/* FOOTER */
+footer{background:#030c18;border-top:1px solid rgba(255,255,255,0.06);padding:4.5rem 5vw 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-about p{font-size:13.5px;color:rgba(192,210,240,0.45);line-height:1.75;margin:1rem 0 1.5rem;max-width:280px}
+.footer-col h6{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li a{font-size:13.5px;color:rgba(192,210,240,0.45);text-decoration:none;transition:0.2s;display:inline-block}
+.footer-col ul li a:hover{color:var(--white);transform:translateX(4px)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:12px;color:rgba(192,210,240,0.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}.nav-menu{display:none}.hamburger{display:flex}
+  .about-intro{grid-template-columns:1fr;gap:2.5rem}.about-intro-visual{display:none}
+  .mv-grid{grid-template-columns:1fr}
+  .commit-grid{grid-template-columns:1fr 1fr}
+  .director-inner{grid-template-columns:1fr;text-align:center;justify-items:center;gap:2.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  section{padding:4.5rem 5vw}
+}
+@media(max-width:600px){.commit-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+
+<nav id="navbar">
+  <a class="logo" href="index.html">
+    <div class="logo-badge">RK</div>
+    <div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="services.html">Products</a></li>
+    <li class="nav-cta"><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Products &amp; Services</a><a href="contact.html" style="color:var(--gold);font-weight:600">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About Us</span></div>
+  <div class="eyebrow">Our Story</div>
+  <h1>About <em>Raj Kamal</em><br>Wing Pharma</h1>
+  <p>An India-based pharmaceutical company dedicated to the import, export, and marketing of high-quality medicines across the world.</p>
+</div>
+
+<!-- ABOUT INTRO -->
+<section>
+  <div class="about-intro">
+    <div class="about-intro-text">
+      <div class="eyebrow">Who We Are</div>
+      <h2>Building a Reliable Global<br>Medicine Supply Chain</h2>
+      <p>Raj Kamal Wing Pharma collaborates with trusted manufacturers and reliable distribution partners, ensuring all products meet high standards of authenticity, quality, and regulatory compliance.</p>
+      <p>Our efficient supply network enables smooth and reliable delivery to global clients — from branded medicines to generics, across multiple therapeutic categories.</p>
+      <ul class="check-row">
+        <li>Trusted Global Supplier of Branded &amp; Generic Medicines</li>
+        <li>Pharma Import &amp; Export Specialist</li>
+        <li>Quality Medicine Source with Regulatory Compliance</li>
+        <li>Reliable Market Partner with Long-Term Vision</li>
+      </ul>
+    </div>
+    <div class="about-intro-visual">
+      <div class="intro-box">
+        <div class="intro-box-icon">🌐</div>
+        <h3>Global Pharmaceutical Trade</h3>
+        <p>Connecting India's manufacturing excellence to international healthcare markets through trusted supply chains and ethical partnerships.</p>
+      </div>
+      <div class="badge-overlap top-l">
+        <div class="bo-label">Established In</div>
+        <div class="bo-val">India 🇮🇳</div>
+      </div>
+      <div class="badge-overlap bot-r">
+        <div class="bo-label">Serving</div>
+        <div class="bo-val">Philippines &amp; Beyond</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MISSION & VISION -->
+<section class="mv-section">
+  <div style="text-align:center;margin-bottom:0.5rem">
+    <div class="eyebrow" style="justify-content:center">Our Direction</div>
+    <h2 class="sh" style="text-align:center;max-width:600px;margin:0 auto 1rem">Mission &amp; Vision That<br>Guide Everything We Do</h2>
+  </div>
+  <div class="mv-grid">
+    <div class="mv-card mission">
+      <div class="mv-icon">🎯</div>
+      <h3>Our Mission</h3>
+      <p>To deliver safe, effective, and affordable medicines to global markets while maintaining the highest standards of quality, reliability, and regulatory compliance.</p>
+      <ul>
+        <li>Safe and high-quality medicines for global markets</li>
+        <li>Consistent and dependable supply chain operations</li>
+        <li>Strong and trusted business partnerships worldwide</li>
+        <li>Reliable pharmaceutical distribution at scale</li>
+      </ul>
+    </div>
+    <div class="mv-card vision">
+      <div class="mv-icon">🔭</div>
+      <h3>Our Vision</h3>
+      <p>To become a trusted global name in pharmaceutical import, export, and marketing — expanding internationally through innovation, efficient supply chains, and long-term collaboration.</p>
+      <ul>
+        <li>Global pharmaceutical market expansion</li>
+        <li>Strong international business partnerships</li>
+        <li>Trusted quality medicine supply worldwide</li>
+        <li>Reliable global healthcare support infrastructure</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMMITMENTS -->
+<section class="commit-section">
+  <div class="eyebrow">Our Promises</div>
+  <h2 class="sh">Commitments We<br>Stand By Every Day</h2>
+  <div class="commit-grid">
+    <div class="commit-card">
+      <div class="cc-num">01</div>
+      <div class="cc-title">High-Quality Products</div>
+      <div class="cc-text">Deliver high-quality and safe pharmaceutical products sourced from certified, trusted manufacturers.</div>
+    </div>
+    <div class="commit-card">
+      <div class="cc-num">02</div>
+      <div class="cc-title">Transparency &amp; Ethics</div>
+      <div class="cc-text">Maintain transparency, reliability, and ethical business practices in every transaction and partnership.</div>
+    </div>
+    <div class="commit-card">
+      <div class="cc-num">03</div>
+      <div class="cc-title">Regulatory Compliance</div>
+      <div class="cc-text">Comply with international regulatory and quality standards across all markets we operate in.</div>
+    </div>
+    <div class="commit-card">
+      <div class="cc-num">04</div>
+      <div class="cc-title">Timely Global Supply</div>
+      <div class="cc-text">Ensure timely and dependable global supply through robust logistics and partner networks.</div>
+    </div>
+    <div class="commit-card">
+      <div class="cc-num">05</div>
+      <div class="cc-title">Long-Term Partnerships</div>
+      <div class="cc-text">Build long-term, mutually beneficial partnerships with clients, distributors, and healthcare providers.</div>
+    </div>
+    <div class="commit-card">
+      <div class="cc-num">06</div>
+      <div class="cc-title">Healthcare Access</div>
+      <div class="cc-text">Support global healthcare through trusted medicine sourcing that improves access to essential treatments.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DIRECTOR -->
+<section class="director-section">
+  <div class="eyebrow" style="justify-content:center;margin-bottom:3.5rem">Leadership</div>
+  <div class="director-inner">
+    <div class="director-photo">
+      <div class="director-initials">KP</div>
+      <div class="director-photo-tag">Director</div>
+    </div>
+    <div class="director-info">
+      <h2 class="director-name">Kamal Kumar Pal</h2>
+      <div class="director-role">Director &amp; Founder, Raj Kamal Wing Pharma</div>
+      <p class="director-bio">Kamal Kumar Pal leads the company with a vision to expand global pharmaceutical trade through the import, export, and marketing of high-quality medicines. With a strong focus on reliability, ethical business practices, and strategic international partnerships, he is dedicated to building trusted supply networks within the pharmaceutical industry.</p>
+      <p class="director-bio" style="margin-top:0.8rem">Under his leadership, the company emphasizes strict quality standards, regulatory compliance, and efficient distribution — ensuring the delivery of safe, effective, and affordable medicines to markets worldwide.</p>
+      <div class="director-traits">
+        <span class="trait-pill">Regulatory Expertise</span>
+        <span class="trait-pill">Global Trade</span>
+        <span class="trait-pill">Quality Focus</span>
+        <span class="trait-pill">Strategic Partnerships</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html"><div class="logo-badge">RK</div><div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div></a>
+      <p>Trusted partner in global pharmaceutical trade — supplying quality branded and generic medicines to international markets.</p>
+    </div>
+    <div class="footer-col"><h6>Navigate</h6><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h6>Products</h6><ul><li><a href="services.html">Branded Medicines</a></li><li><a href="services.html">Generic Medicines</a></li><li><a href="services.html">Injectables</a></li><li><a href="services.html">Oral Formulations</a></li></ul></div>
+    <div class="footer-col"><h6>Contact</h6><ul><li><a href="tel:+919211230102">+91 9211230102</a></li><li><a href="tel:+919560020800">+91 95600 20800</a></li><li><a href="mailto:rajkamalpharmaceuticals@gmail.com">Email Us</a></li><li><a href="https://www.rajkamalwingpharma.com" target="_blank">Website</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Raj Kamal Wing Pharma. All rights reserved.</p><p>Trusted Partner in Global Pharma Trade</p></div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+setInterval(()=>{rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px'},16);
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='0.5'});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'})});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.style.animation='fadeUp 0.6s ease both';el.target.style.opacity='1'}})},{threshold:0.1});
+document.querySelectorAll('.mv-card,.commit-card,.feat-item').forEach(el=>{el.style.opacity='0';obs.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Raj Kamal Wing Pharma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#05101f;--deep:#081528;--navy:#0c2044;--blue:#1044a3;--sky:#2563eb;--teal:#06b6d4;--gold:#d4a843;--gold2:#f0c96e;--white:#f0f4ff;--mist:#c8d4f0;--dim:rgba(192,210,240,0.55);--card-bg:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);--radius:14px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(212,168,67,0.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:transform 0.15s ease-out}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;opacity:0.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,16,31,0.8);backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,168,67,0.12);transition:var(--transition)}
+nav.scrolled{height:62px;background:rgba(5,16,31,0.96);border-bottom-color:rgba(212,168,67,0.22)}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-badge{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),#8a6010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-1px;box-shadow:0 4px 20px rgba(212,168,67,0.35);flex-shrink:0}
+.logo-words{display:flex;flex-direction:column;line-height:1.1}
+.logo-words strong{font-size:14.5px;font-weight:600;color:var(--white)}
+.logo-words span{font-size:10px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{display:block;padding:8px 16px;font-size:13.5px;font-weight:500;color:rgba(240,244,255,0.65);text-decoration:none;border-radius:8px;transition:var(--transition)}
+.nav-menu a:hover{color:var(--white);background:rgba(255,255,255,0.07)}
+.nav-menu a.active{color:var(--white)}
+.nav-cta a{background:linear-gradient(135deg,var(--gold),#9a6f10)!important;color:var(--ink)!important;font-weight:700!important;box-shadow:0 3px 16px rgba(212,168,67,0.3)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(5,16,31,0.98);padding:1rem 2rem 1.5rem;border-bottom:1px solid rgba(212,168,67,0.15);z-index:999;flex-direction:column;gap:4px}
+.mobile-menu a{display:block;padding:10px 14px;font-size:14px;color:rgba(240,244,255,0.75);text-decoration:none;border-radius:8px}
+.mobile-menu.open{display:flex}
+section{padding:7rem 5vw;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+
+/* PAGE HERO */
+.page-hero{padding-top:140px;padding-bottom:5rem;background:radial-gradient(ellipse 120% 70% at 50% -10%,rgba(212,168,67,0.18) 0%,transparent 65%),linear-gradient(180deg,var(--ink) 0%,var(--deep) 100%);text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,67,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,0.04) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 80%)}
+.page-hero .eyebrow{justify-content:center}
+.page-hero h1{font-size:clamp(2.8rem,6vw,4.5rem);font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:1.2rem}
+.page-hero h1 em{font-style:italic;color:var(--gold)}
+.page-hero p{font-size:1.1rem;color:var(--dim);max-width:580px;margin:0 auto;font-weight:300;line-height:1.8}
+.breadcrumb{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:2rem;font-size:12px;color:rgba(192,210,240,0.4)}
+.breadcrumb a{color:var(--teal);text-decoration:none}
+.breadcrumb span{opacity:0.4}
+
+/* CONTACT LAYOUT */
+.contact-section{background:linear-gradient(180deg,var(--deep) 0%,var(--ink) 100%)}
+.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+
+/* INFO SIDE */
+.info-stack{display:flex;flex-direction:column;gap:1.2rem}
+.info-card{padding:1.6rem 2rem;border-radius:14px;border:1px solid var(--card-border);background:var(--card-bg);transition:var(--transition);display:flex;gap:1.2rem;align-items:flex-start}
+.info-card:hover{border-color:rgba(212,168,67,0.3);background:rgba(16,68,163,0.15);transform:translateX(4px)}
+.ic-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,rgba(212,168,67,0.18),rgba(6,182,212,0.18));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ic-label{font-size:9.5px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.ic-value{font-size:14.5px;color:var(--white);font-weight:500;line-height:1.5}
+.ic-value a{color:var(--white);text-decoration:none;transition:0.2s}
+.ic-value a:hover{color:var(--gold)}
+
+.seeking-card{padding:2rem;border-radius:16px;border:1px solid rgba(212,168,67,0.2);background:linear-gradient(135deg,rgba(212,168,67,0.06),rgba(16,68,163,0.15));margin-top:0.5rem}
+.seeking-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold2);margin-bottom:0.8rem}
+.seeking-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.seeking-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--dim);line-height:1.5}
+.seeking-list li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:12px;margin-top:2px}
+
+/* FORM */
+.form-wrap{background:var(--card-bg);border:1px solid var(--card-border);border-radius:20px;padding:3rem;position:relative;overflow:hidden}
+.form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--teal),var(--gold))}
+.form-title{font-size:1.8rem;font-weight:400;margin-bottom:0.4rem;color:var(--white)}
+.form-sub{font-size:13.5px;color:var(--dim);margin-bottom:2rem;line-height:1.6}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:1.1rem}
+.fg label{font-size:11.5px;font-weight:600;color:rgba(192,210,240,0.7);letter-spacing:0.5px;text-transform:uppercase}
+.fg input,.fg textarea,.fg select{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 16px;color:var(--white);font-size:14px;font-family:'Outfit',sans-serif;transition:var(--transition);outline:none;width:100%}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(192,210,240,0.25)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gold);background:rgba(212,168,67,0.06);box-shadow:0 0 0 4px rgba(212,168,67,0.08)}
+.fg select option{background:var(--deep);color:var(--white)}
+.fg textarea{resize:vertical;min-height:130px}
+.fg.req label::after{content:' *';color:var(--gold)}
+
+.submit-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--gold),#9a6f10);color:var(--ink);font-weight:700;font-size:15px;border:none;border-radius:12px;cursor:pointer;transition:var(--transition);font-family:'Outfit',sans-serif;letter-spacing:0.3px;box-shadow:0 4px 24px rgba(212,168,67,0.3);margin-top:0.5rem}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(212,168,67,0.5)}
+.submit-btn:active{transform:translateY(0)}
+
+/* SUCCESS STATE */
+.form-success{display:none;text-align:center;padding:3rem;flex-direction:column;align-items:center;gap:1rem}
+.success-icon{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,rgba(212,168,67,0.2),rgba(6,182,212,0.2));border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:2rem;animation:pop 0.4s ease}
+@keyframes pop{0%{transform:scale(0.5);opacity:0}80%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+.success-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:500;color:var(--white)}
+.success-msg{font-size:14px;color:var(--dim);max-width:320px;line-height:1.7}
+.reset-btn{padding:10px 28px;background:transparent;border:1.5px solid rgba(212,168,67,0.4);border-radius:10px;color:var(--gold2);font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:0.2s;margin-top:0.5rem}
+.reset-btn:hover{background:rgba(212,168,67,0.1)}
+
+/* DIVIDER */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,0.2),transparent)}
+
+/* WHY PARTNER */
+.wp-section{background:linear-gradient(135deg,var(--navy),var(--deep))}
+.wp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3rem}
+.wp-card{padding:1.8rem 1.5rem;border-radius:14px;border:1px solid var(--card-border);background:var(--card-bg);text-align:center;transition:var(--transition);cursor:default}
+.wp-card:hover{border-color:rgba(212,168,67,0.3);background:rgba(212,168,67,0.07);transform:translateY(-5px)}
+.wp-icon{font-size:2rem;margin-bottom:0.8rem;display:block}
+.wp-title{font-size:13.5px;font-weight:600;color:var(--white);line-height:1.35}
+
+/* FOOTER */
+footer{background:#030c18;border-top:1px solid rgba(255,255,255,0.06);padding:4.5rem 5vw 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-about p{font-size:13.5px;color:rgba(192,210,240,0.45);line-height:1.75;margin:1rem 0;max-width:280px}
+.footer-col h6{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li a{font-size:13.5px;color:rgba(192,210,240,0.45);text-decoration:none;transition:0.2s;display:inline-block}
+.footer-col ul li a:hover{color:var(--white);transform:translateX(4px)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:12px;color:rgba(192,210,240,0.3)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}.nav-menu{display:none}.hamburger{display:flex}
+  .contact-layout{grid-template-columns:1fr;gap:2.5rem}
+  .form-row{grid-template-columns:1fr}
+  .wp-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  section{padding:4.5rem 5vw}
+}
+@media(max-width:600px){.wp-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.form-wrap{padding:1.8rem}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curR"></div>
+<nav id="navbar">
+  <a class="logo" href="index.html"><div class="logo-badge">RK</div><div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div></a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Products</a></li>
+    <li class="nav-cta"><a href="contact.html" class="active">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Products &amp; Services</a><a href="contact.html" style="color:var(--gold);font-weight:600">Contact Us</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact Us</span></div>
+  <div class="eyebrow">Get In Touch</div>
+  <h1>Let's Build<br><em>Together</em></h1>
+  <p>Ready to partner with a trusted global pharmaceutical supplier? Reach out — we'd love to explore how we can work together.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-layout">
+    <!-- INFO -->
+    <div>
+      <div class="eyebrow">Contact Details</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;line-height:1.2;margin-bottom:2rem">Reach Us<br>Directly</h2>
+
+      <div class="info-stack">
+        <div class="info-card">
+          <div class="ic-icon">📞</div>
+          <div>
+            <div class="ic-label">Phone / WhatsApp</div>
+            <div class="ic-value">
+              <a href="tel:+919211230102">+91 9211230102</a><br>
+              <a href="tel:+919560020800">+91 95600 20800</a>
+            </div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon">✉️</div>
+          <div>
+            <div class="ic-label">Email Address</div>
+            <div class="ic-value"><a href="mailto:rajkamalpharmaceuticals@gmail.com">rajkamalpharmaceuticals@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon">🌐</div>
+          <div>
+            <div class="ic-label">Website</div>
+            <div class="ic-value"><a href="https://www.rajkamalwingpharma.com" target="_blank">www.rajkamalwingpharma.com</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon">📍</div>
+          <div>
+            <div class="ic-label">Based In</div>
+            <div class="ic-value">India 🇮🇳 &nbsp;—&nbsp; Serving Global Markets</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seeking-card" style="margin-top:1.5rem">
+        <h4>🤝 Currently Seeking Partners In:</h4>
+        <ul class="seeking-list">
+          <li>Pharmaceutical distributors in Africa &amp; Southeast Asia</li>
+          <li>Hospitals &amp; healthcare institutions for direct supply</li>
+          <li>Pharma companies for import/export collaboration</li>
+          <li>Logistics &amp; freight partners for global shipments</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-wrap" id="formWrap">
+      <h2 class="form-title">Send Us a Message</h2>
+      <p class="form-sub">Fill out the form and our team will get back to you within 24–48 hours.</p>
+
+      <div id="formBody">
+        <div class="form-row">
+          <div class="fg req"><label>First Name</label><input type="text" placeholder="e.g. John" id="f-first"></div>
+          <div class="fg req"><label>Last Name</label><input type="text" placeholder="e.g. Doe" id="f-last"></div>
+        </div>
+        <div class="fg req"><label>Email Address</label><input type="email" placeholder="john@yourcompany.com" id="f-email"></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+1 234 567 8900" id="f-phone"></div>
+        <div class="form-row">
+          <div class="fg"><label>Organization</label><input type="text" placeholder="Company or hospital name" id="f-org"></div>
+          <div class="fg"><label>Country</label><input type="text" placeholder="e.g. Philippines" id="f-country"></div>
+        </div>
+        <div class="fg"><label>Enquiry Type</label>
+          <select id="f-type">
+            <option value="">Select type of enquiry...</option>
+            <option>Product / Medicine Enquiry</option>
+            <option>Distribution Partnership</option>
+            <option>Hospital Supply Agreement</option>
+            <option>Export Enquiry</option>
+            <option>Import Enquiry</option>
+            <option>General Information</option>
+          </select>
+        </div>
+        <div class="fg req"><label>Message</label><textarea placeholder="Tell us about your requirements, products needed, quantities, or partnership interest..." id="f-msg"></textarea></div>
+        <button class="submit-btn" onclick="submitForm()">Send Message →</button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Message Sent!</div>
+        <p class="success-msg">Thank you for reaching out. Our team will review your enquiry and respond within 24–48 hours.</p>
+        <button class="reset-btn" onclick="resetForm()">← Send Another Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY PARTNER -->
+<section class="wp-section">
+  <div style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">Reasons to Partner</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;text-align:center;margin-bottom:0.5rem">Why Partner With Us?</h2>
+    <p style="color:var(--dim);text-align:center;max-width:520px;margin:0 auto 0;font-size:1rem;font-weight:300">We deliver quality pharmaceutical products with consistency, transparency, and professional support.</p>
+  </div>
+  <div class="wp-grid">
+    <div class="wp-card"><span class="wp-icon">📦</span><div class="wp-title">Consistent Product Supply</div></div>
+    <div class="wp-card"><span class="wp-icon">🏭</span><div class="wp-title">Reliable Certified Sourcing</div></div>
+    <div class="wp-card"><span class="wp-icon">💰</span><div class="wp-title">Competitive Export Pricing</div></div>
+    <div class="wp-card"><span class="wp-icon">💬</span><div class="wp-title">Professional Communication</div></div>
+    <div class="wp-card"><span class="wp-icon">🤝</span><div class="wp-title">Long-Term Partnership Focus</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html"><div class="logo-badge">RK</div><div class="logo-words"><strong>Raj Kamal Wing Pharma</strong><span>Global Pharma Trade</span></div></a>
+      <p>Trusted partner in global pharmaceutical trade — supplying quality branded and generic medicines to international markets.</p>
+    </div>
+    <div class="footer-col"><h6>Navigate</h6><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h6>Products</h6><ul><li><a href="services.html">Branded Medicines</a></li><li><a href="services.html">Generic Medicines</a></li><li><a href="services.html">Injectables</a></li><li><a href="services.html">Oral Formulations</a></li></ul></div>
+    <div class="footer-col"><h6>Contact</h6><ul><li><a href="tel:+919211230102">+91 9211230102</a></li><li><a href="tel:+919560020800">+91 95600 20800</a></li><li><a href="mailto:rajkamalpharmaceuticals@gmail.com">Email Us</a></li><li><a href="https://www.rajkamalwingpharma.com" target="_blank">Website</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Raj Kamal Wing Pharma. All rights reserved.</p><p>Trusted Partner in Global Pharma Trade</p></div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+setInterval(()=>{rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;curR.style.left=rx+'px';curR.style.top=ry+'px'},16);
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='0.5'});el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'})});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+function submitForm(){
+  const req=['f-first','f-last','f-email','f-msg'];
+  const bad=req.filter(id=>!document.getElementById(id).value.trim());
+  if(bad.length){
+    bad.forEach(id=>{
+      const el=document.getElementById(id);
+      el.style.borderColor='rgba(239,68,68,0.7)';
+      el.style.background='rgba(239,68,68,0.05)';
+      setTimeout(()=>{el.style.borderColor='';el.style.background=''},2500);
+    });
+    return;
+  }
+  document.getElementById('formBody').style.display='none';
+  const s=document.getElementById('formSuccess');
+  s.style.display='flex';
+  s.style.animation='fadeUp 0.5s ease both';
+}
+
+function resetForm(){
+  ['f-first','f-last','f-email','f-phone','f-org','f-country','f-msg'].forEach(id=>{document.getElementById(id).value=''});
+  document.getElementById('f-type').selectedIndex=0;
+  document.getElementById('formSuccess').style.display='none';
+  document.getElementById('formBody').style.display='block';
+}
+
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.style.animation='fadeUp 0.6s ease both';el.target.style.opacity='1'}})},{threshold:0.1});
+document.querySelectorAll('.info-card,.wp-card').forEach(el=>{el.style.opacity='0';obs.observe(el)});
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+</script>
+<style>@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}</style>
+</body>
+</html>
